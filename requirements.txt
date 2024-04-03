@@ -1,4 +1,4 @@
-Flask==2.1.2
+Flask
 scikit-learn
 joblib
 jedi
