@@ -15,7 +15,7 @@ model = LinearRegression()
 # Sample data (replace with your own dataset)
 
 
-df = pd.read_csv('data\\readmission_demo.csv')[['Chronic_cond', 'sdoh_Transportation_barrier', 'PROGRAMS_CONTRIB']].dropna().reset_index(drop = True)
+df = pd.read_csv('readmission_demo.csv')[['Chronic_cond', 'sdoh_Transportation_barrier', 'PROGRAMS_CONTRIB']].dropna().reset_index(drop = True)
 
 
 X = df[['Chronic_cond', 'sdoh_Transportation_barrier']]
