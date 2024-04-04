@@ -14,11 +14,8 @@ model = LinearRegression()
 
 # Sample data (replace with your own dataset)
 
-try:
-    df = pd.read_csv('readmission_demo.csv')[['Chronic_cond', 'sdoh_Transportation_barrier', 'PROGRAMS_CONTRIB']].dropna().reset_index(drop=True)
-    # Rest of your code for model training and Flask routes
-except Exception as e:
-     print(jsonify({'error': f'An error occurred while processing the data: {str(e)}'}))
+
+df = pd.read_csv('data\\readmission_demo.csv')[['Chronic_cond', 'sdoh_Transportation_barrier', 'PROGRAMS_CONTRIB']].dropna().reset_index(drop = True)
 
 
 X = df[['Chronic_cond', 'sdoh_Transportation_barrier']]
@@ -50,7 +47,7 @@ def index():
                 return jsonify({'prediction': prediction[0]})      
             except Exception as e:
                 return jsonify({'error': str(e)})
-    return render_template('index.html', prediction=prediction)
+    return render_template('templates\\index.html', prediction=prediction)
 
 
 @app.route('/ID', methods = ['GET'])
@@ -71,4 +68,4 @@ def seccond():
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
